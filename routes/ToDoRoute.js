@@ -1,4 +1,4 @@
-const Authorization = require("../middlewares/Middlewares");
+// const Authorization = require("../middlewares/Middlewares");
 const express = require("express");
 const { Router } = require("express");
 const {
@@ -11,11 +11,11 @@ const {
 } = require("../controllers/ToDoController");
  const router = express.Router();
 router.get("/", getToDo);
-router.post("/save", Authorization,saveToDo);
-router.post("/update", Authorization,updateToDo);
+router.post("/save", saveToDo);
+router.post("/update", updateToDo);
 
-router.get("/one", Authorization,findoneToDo);
-router.post("/delete", Authorization,deleteToDo);
+router.get("/one", findoneToDo);
+router.post("/delete", deleteToDo);
 
-router.patch("/done", Authorization,patch);
+router.patch("/done", patch);
 module.exports = router;
